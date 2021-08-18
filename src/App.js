@@ -1,3 +1,5 @@
+import React, { component } from 'react';
+import Navigation from './component/Navigation';
 import './App.css';
 
 function App() {
