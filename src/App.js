@@ -6,6 +6,10 @@ import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
 
+const app = new Clarifai.App({
+  apiKey: '036094c653f64485b1082194d324fd43'
+});
+
 const particlesOptions = {
   particles: {
     number: {
