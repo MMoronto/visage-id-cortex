@@ -37,11 +37,11 @@ class App extends Component {
   }
 
   onButtonSubmit = () => {
-    this.setState({imageUrl: this.state.input})
+    this.setState({imageUrl: this.state.input});
     app.models
       .predict(
         Clarifai.COLOR_MODEL, 
-        "https://samples.clarifai.com/face-det.jpg")
+        this.state.input)
       .then(
       function(response) {
         // do something with response
