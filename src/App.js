@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 // import Particles from 'react-particles-js';
-// import {ClarifaiStub, grpc} from 'clarifai-nodejs-grpc';
-// import stub from 'ClarifaiStub.grpc()';
 import Clarifai from 'clarifai';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
@@ -9,9 +7,6 @@ import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
 import './App.css';
-
-// const metadata = new grpc.Metadata();
-// metadata.set("authorization", "Key {036094c653f64485b1082194d324fd43}");
 
 const app = new Clarifai.App({
   apiKey: '036094c653f64485b1082194d324fd43'
@@ -42,7 +37,8 @@ class App extends Component {
 
   onButtonSubmit = () => {
     console.log('click');
-    app.models.predict("036094c653f64485b1082194d324fd43", 
+    app.models.predict(
+      Clarifai.COLOR_MODEL, 
       "https://samples.clarifai.com/face-det.jpg").
     then(
       function(response) {
