@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 // import Particles from 'react-particles-js';
 import {ClarifaiStub, grpc} from 'clarifai-nodejs-grpc';
-import stub from 'ClarifaiStub.grpc()';
-import Clarifai from 'clarifai';
+// import stub from 'ClarifaiStub.grpc()';
+// import Clarifai from 'clarifai';
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
@@ -41,9 +42,12 @@ class App extends Component {
 
   onButtonSubmit = () => {
     console.log('click');
-    metadata.models.predict("036094c653f64485b1082194d324fd43", "https://en.wikipedia.org/wiki/Ibrahim_Babangida#/media/File:General_Ibrahim_B._Babangida_GCFR.jpg").then(
+    metadata.models.predict("036094c653f64485b1082194d324fd43", 
+      "https://samples.clarifai.com/face-det.jpg").
+    then(
       function(response) {
         // do something with response
+        console.log(response);
       },
       function(err) {
         // there was an error
@@ -65,8 +69,8 @@ class App extends Component {
           onButtonSubmit={this.onButtonSubmit} 
         /> 
 
-        {/*
-              <FaceRecognition />*/}
+        
+        <FaceRecognition />
       </div>
     );
   }
