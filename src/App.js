@@ -35,6 +35,14 @@ class App extends Component {
 
   onButtonSubmit = () => {
     console.log('click');
+    app.models.predict("036094c653f64485b1082194d324fd43", "https://en.wikipedia.org/wiki/Ibrahim_Babangida#/media/File:General_Ibrahim_B._Babangida_GCFR.jpg").then(
+      function(response) {
+        // do something with response
+      },
+      function(err) {
+        // there was an error
+      }
+    );
   }
 
   render() {
