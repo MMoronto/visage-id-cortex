@@ -69,7 +69,7 @@ class App extends Component {
   }
 
   onRouteChange = () => {
-    this.setState('home')
+    this.setState({route: 'home'});
   }
 
   render() {
