@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Particles from 'react-particles-js';
+import Particles from 'react-particles-js';
 import Clarifai from 'clarifai';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Navigation from './components/Navigation/Navigation';
@@ -81,9 +81,9 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <div className="App">
-{/*        <Particles className='particles'
+        <Particles className='particles'
           params={particlesOptions}
-        />*/}
+        />
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home' 
           ? <div>
