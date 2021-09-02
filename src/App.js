@@ -16,11 +16,11 @@ const app = new Clarifai.App({
 
 const particlesOptions = {
   particles: {
-    line_linked: {
-        shadow: {
+    number: {
+      value: 35,
+        density: {
           enable: true,
-          color: "#3CA9D1",
-          blur: 5 
+          value_area: 820 
         }
     }
   }
