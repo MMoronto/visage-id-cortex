@@ -16,15 +16,30 @@ const app = new Clarifai.App({
 
 const particlesOptions = {
   particles: {
-    number: {
-      value: 30,
-        density: {
+    line_linked: {
+        shadow: {
           enable: true,
-          value_area: 800 
+          color: "#3CA9D1",
+          blur: 5 
         }
     }
   }
 }
+
+class App extends Component{
+  
+    render(){
+        return (
+          <div className="App">
+            <Particles 
+                params={particlesOptions} 
+            />
+          </div>
+        );
+    };
+
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -81,9 +96,9 @@ class App extends Component {
     const { isSignedIn, imageUrl, route, box } = this.state;
     return (
       <div className="App">
-        <Particles className='particles'
+{/*        <Particles className='particles'
           params={particlesOptions}
-        />
+        />*/}
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         { route === 'home' 
           ? <div>
