@@ -106,7 +106,7 @@ class App extends Component {
         { route === 'home' 
           ? <div>
               <Logo />
-              <Rank name={this.lstate.user.name} entries={this.state.user.entries}/>
+              <Rank name={this.state.user.name} entries={this.state.user.entries}/>
               <ImageLinkForm  
                 onInputChange={this.onInputChange} 
                 onButtonSubmit={this.onButtonSubmit} 
