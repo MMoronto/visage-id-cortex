@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Signin extends React.component {
+class Signin extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -19,6 +19,7 @@ class Signin extends React.component {
 
 	onSubmitSignIn = () => {
 		console.log(this.state);
+		this.props.onRouteChange('home');
 	}
 
 	render() {
@@ -40,7 +41,7 @@ class Signin extends React.component {
 				    </fieldset>
 				    <div className="">
 				      <input 
-					      onClick={() => onRouteChange('home')}	
+					      onClick={this.onSubmitSignIn}	
 					      className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
 					      type="submit" 
 					      value="Sign in"
