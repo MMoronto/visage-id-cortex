@@ -85,6 +85,12 @@ class App extends Component {
       .then(response => {
         if (response) {
           fetch('http://localhost:3000/image')
+            method: 'put',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+              id: this.state.user.id
+            })
+          })
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
