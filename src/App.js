@@ -17,7 +17,7 @@ const app = new Clarifai.App({
 const particlesOptions = {
   particles: {
     number: {
-      value: 35,
+      value: 100,
         density: {
           enable: true,
           value_area: 820 
@@ -80,6 +80,7 @@ class App extends Component {
 
   onButtonSubmit = () => {
     this.setState({imageUrl: this.state.input});
+
     app.models
       .predict(
         Clarifai.FACE_DETECT_MODEL, 
@@ -97,6 +98,7 @@ class App extends Component {
             .then(count => {
               this.setState(Object.assign(this.state.user, { entries: count}))
             })
+            .catch(console.log)
         }
         this.displayFaceBox(this.calculateFaceLocation(response))
       })
